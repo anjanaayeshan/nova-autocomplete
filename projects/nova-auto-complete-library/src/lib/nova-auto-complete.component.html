@@ -4,7 +4,7 @@
 <div novaAutoComplete (clickOutSide)="onCloseDropDown()">
     <div *ngIf='showDropDown' class='search-drop-down'>
 
-        <ng-container *ngFor="let item of items | filter: control.value: options.key">
+        <ng-container *ngFor="let item of items | filter: control.value: options.key : skipAccents">
 
             <div (click)="onSelectValue(item)" class="search-results" [ngClass]="optionCssClassList">
                 <a [innerHTML]="item[options.key] | letterBold: control.value">

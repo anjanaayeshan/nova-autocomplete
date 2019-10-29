@@ -1,10 +1,10 @@
 <div class="width-half">
   <label for="search">
-    <i class='fa fa-search icon-pos color-purple'></i>
+    <em class='fa fa-search icon-pos color-purple'></em>
   </label>
 
   <form [formGroup]='stateForm' autocomplete="new-password" novalidate>
-    <nova-auto-complete [items]="states" [options]="{ key:'value', display:'value' }"
+    <nova-auto-complete [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="true"
       [control]="stateForm.controls.search" (onItemSelected)="onItemSelected($event)"></nova-auto-complete>
   </form>
 

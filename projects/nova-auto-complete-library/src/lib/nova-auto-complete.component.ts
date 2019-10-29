@@ -16,8 +16,11 @@ export class NovaAutoCompleteComponent implements OnInit {
   @Input() items: any[];
   @Input() elementId: string;
   @Input() placeholder: string;
+  @Input() skipAccents: boolean;
+
   showDropDown = false;
 
+  // tslint:disable-next-line: no-output-on-prefix
   @Output() onItemSelected: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
