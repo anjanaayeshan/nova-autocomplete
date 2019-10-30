@@ -3,11 +3,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'nova-auto-complete',
-  templateUrl: './nova-auto-complete.component.html',
-  styleUrls: ['./nova-auto-complete.component.css']
+  selector: 'nova-search',
+  templateUrl: './nova-search.component.html',
+  styleUrls: ['./nova-search.component.css']
 })
-export class NovaAutoCompleteComponent implements OnInit {
+export class NovaSearchComponent implements OnInit {
 
   @Input() options: { key: string, display: string };
   @Input() control: FormControl;

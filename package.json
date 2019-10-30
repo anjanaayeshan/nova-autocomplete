@@ -1,5 +1,5 @@
 {
-  "name": "nova-auto-complete",
+  "name": "nova-search",
   "version": "1.0.0",
   "description": "A search box which can filter any item set with or without any accent in different languages. Example : Spanish, French",
   "keywords": [
@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-lib": "ng build NovaAutoCompleteLibrary",
-    "npm-pack": "cd dist/nova-auto-complete-library && npm pack",
+    "npm-pack": "cd dist/nova-search-library && npm pack",
     "package": "npm run build-lib && npm run npm-pack"
   },
   "dependencies": {

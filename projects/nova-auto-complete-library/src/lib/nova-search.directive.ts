@@ -1,9 +1,9 @@
 import { Directive, Output, ElementRef, HostListener, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: '[novaAutoComplete]'
+  selector: '[novaSearch]'
 })
-export class NovaAutoCompleteDirective {
+export class NovaSearchDirective {
 
   @Output() clickOutSide: EventEmitter<any> = new EventEmitter();
 

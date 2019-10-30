@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { NovaAutoCompleteDirective } from './nova-auto-complete.directive';
+import { NovaSearchDirective } from './nova-search.directive';
 import { FilterPipe } from './filter.pipe';
 import { LetterBoldPipe } from './letter-bold.pipe';
-import { NovaAutoCompleteComponent } from './nova-auto-complete.component';
+import { NovaSearchComponent } from './nova-search.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,16 +13,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   declarations: [
-    NovaAutoCompleteDirective,
+    NovaSearchDirective,
     FilterPipe,
     LetterBoldPipe,
-    NovaAutoCompleteComponent
+    NovaSearchComponent
   ],
   exports: [
     FilterPipe,
     LetterBoldPipe,
-    NovaAutoCompleteDirective,
-    NovaAutoCompleteComponent
+    NovaSearchDirective,
+    NovaSearchComponent
   ]
 })
-export class NovaAutoCompleteLibraryModule { }
+export class NovaSearchModule { }

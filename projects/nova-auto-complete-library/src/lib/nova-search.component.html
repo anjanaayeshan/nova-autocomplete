@@ -1,7 +1,7 @@
 <input id='{{ elementId }}' autocomplete="off" placeholder="{{ placeholder }}" [formControl]="control"
     [ngClass]="inputCss" type='text'>
 
-<div novaAutoComplete (clickOutSide)="onCloseDropDown()">
+<div novaSearch (clickOutSide)="onCloseDropDown()">
     <div *ngIf='showDropDown' class='drop-down'>
 
         <ng-container *ngFor="let item of items | filter: control.value: options.key : skipAccents">

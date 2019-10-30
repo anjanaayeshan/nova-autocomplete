@@ -1,4 +1,4 @@
-import { NovaAutoCompleteLibraryModule } from './../../projects/nova-auto-complete-library/src/lib/nova-auto-complete-library.module';
+import { NovaSearchModule } from '../../projects/nova-auto-complete-library/src/lib/nova-search.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    NovaAutoCompleteLibraryModule
+    NovaSearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
