@@ -1,27 +1,67 @@
 # NovaSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+Search box for angular 6+ applications which can filter any item set with or without any accent in different languages like Spanish, French etc. 
 
-## Development server
+# Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1). Search dropdown list
+2). Consider language accents while searching
+3). Angular forms support
+4). Angular v6 and above supported
+5). Cross browser support
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm install nova-search`
 
-## Build
+# Configuration
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+import NovaSearchModule into your app.module.
 
-## Running unit tests
+`import { NovaSearchModule } from 'nova-search';`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`@NgModule({
+  imports: [
+    ...,
+    NovaSearchModule
+  ],
+  ...
+})`
 
-## Running end-to-end tests
+Use nova-search component inside your HTML and pass values for inputs.
+Example: 
+`<nova-search [items]="itemList" [options]="{ key:'value', display:'value' }" [skipAccents]="false"
+      [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'" [control]="formGroup.controls.search"
+      [elementId]="'nova-search-element'" [placeholder]="'search here'"
+      (onItemSelected)="onItemSelected($event)"></nova-search>`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Add a css class named 'bold' globally to make matched letters more readable while searching.
 
-## Further help
+`.bold {
+    font-weight: bold;
+}`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Input
+
+*[items] - Any search item list.
+
+*[options] - This needs a object with type `{ key : string, display : string }`. 
+             1). 'key' is the property name which will be used to filter item set.
+             2). 'display' will be the property which will appear in search results.
+
+*[control] - angular form control
+
+[elementId] - HTML element id
+
+[placeholder] - Input placeholder
+
+[inputCss] - Css class names for search box element. Ex: ` [inputCss]="'custom-css-1 custom-css-2'"`
+
+[optionCss] - Css class names for search results section. Ex: ` [optionCss]="'custom-css-1 custom-css-2'"`
+
+[skipAccents] - This will be a boolean property which is to toggle whether user wants to skip accents while searching or not.
+
+Output
+
+(onItemSelected): Event - change event when user clicks on a search result. 
+
