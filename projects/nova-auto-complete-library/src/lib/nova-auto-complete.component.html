@@ -1,12 +1,12 @@
 <input id='{{ elementId }}' autocomplete="off" placeholder="{{ placeholder }}" [formControl]="control"
-    [ngClass]="inputCssClassList" type='text'>
+    [ngClass]="inputCss" type='text'>
 
 <div novaAutoComplete (clickOutSide)="onCloseDropDown()">
     <div *ngIf='showDropDown' class='search-drop-down'>
 
         <ng-container *ngFor="let item of items | filter: control.value: options.key : skipAccents">
 
-            <div (click)="onSelectValue(item)" class="search-results" [ngClass]="optionCssClassList">
+            <div (click)="onSelectValue(item)" class="search-results" [ngClass]="optionCss">
                 <a [innerHTML]="item[options.key] | letterBold: control.value">
                     {{ item[options.display] }}
                 </a>

@@ -4,8 +4,9 @@
   </label>
 
   <form [formGroup]='stateForm' autocomplete="new-password" novalidate>
-    <nova-auto-complete [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="true"
-      [control]="stateForm.controls.search" (onItemSelected)="onItemSelected($event)"></nova-auto-complete>
+    <nova-auto-complete [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="false"
+      [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'" [control]="stateForm.controls.search"
+      (onItemSelected)="onItemSelected($event)"></nova-auto-complete>
   </form>
 
 </div>

@@ -11,8 +11,8 @@ export class NovaAutoCompleteComponent implements OnInit {
 
   @Input() options: { key: string, display: string };
   @Input() control: FormControl;
-  @Input() optionCssClassList: string[];
-  @Input() inputCssClassList: string[];
+  @Input() optionCss: string;
+  @Input() inputCss: string;
   @Input() items: any[];
   @Input() elementId: string;
   @Input() placeholder: string;
