@@ -1,6 +1,13 @@
 {
   "name": "nova-auto-complete",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A search box which can filter any item set with or without any accent in different languages. Example : Spanish, French",
+  "keywords": [
+    "autocomplete",
+    "search",
+    "searchbox",
+    "dropdown"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +19,6 @@
     "npm-pack": "cd dist/nova-auto-complete-library && npm pack",
     "package": "npm run build-lib && npm run npm-pack"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^6.0.0",
     "@angular/core": "^6.0.0",

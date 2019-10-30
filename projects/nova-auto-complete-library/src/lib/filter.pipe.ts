@@ -7,7 +7,6 @@ export class FilterPipe implements PipeTransform {
 
   transform(items: any[], search: string, labelKey = 'label', skipAccents = false): any {
     if (!search) { return items; }
-
     return items.filter(item => {
       if (!item) { return; }
       if (skipAccents) {
