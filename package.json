@@ -1,6 +1,6 @@
 {
   "name": "nova-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A search box which can filter any item set with or without any accent in different languages. Example : Spanish, French",
   "keywords": [
     "nova search",

@@ -1,67 +1,50 @@
-# NovaSearch
+# Nova Search
 
-Search box for angular 6+ applications which can filter any item set with or without any accent in different languages like Spanish, French etc. 
+Search box for angular 6+ applications which can filter any item set with or without any accent in different languages like Spanish, French etc.
 
 # Features
-
-1). Search dropdown list
-2). Consider language accents while searching
-3). Angular forms support
-4). Angular v6 and above supported
-5). Cross browser support
+ - Search dropdown list 
+ - Consider language accents while searching 
+ - Angular forms support 
+ - Angular v6 and above supported 
+ - Cross browser support
 
 # Installation
-
-Run `npm install nova-search`
+    Run `npm install nova-search`
 
 # Configuration
 
-import NovaSearchModule into your app.module.
+- Import NovaSearchModule into your app.module.
 
-`import { NovaSearchModule } from 'nova-search';`
+    `import { NovaSearchModule } from 'nova-search';`
 
-`@NgModule({
-  imports: [
-    ...,
-    NovaSearchModule
-  ],
-  ...
-})`
+    `@NgModule({ imports: [ ..., NovaSearchModule ], ... })`
 
-Use nova-search component inside your HTML and pass values for inputs.
-Example: 
-`<nova-search [items]="itemList" [options]="{ key:'value', display:'value' }" [skipAccents]="false"
-      [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'" [control]="formGroup.controls.search"
-      [elementId]="'nova-search-element'" [placeholder]="'search here'"
-      (onItemSelected)="onItemSelected($event)"></nova-search>`
+- Use nova-search component inside your HTML and pass values for inputs. Example:
+    `<nova-search [items]="itemList" [options]="{ key:'value', display:'value' }" 
+    [skipAccents]="false" [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'" 
+    [control]="formGroup.controls.search" [elementId]="'nova-search-element'" [placeholder]="'search here'" (onItemSelected)="onItemSelected($event)"></nova-search>`
 
-Add a css class named 'bold' globally to make matched letters more readable while searching.
+- Add a css class named 'bold' globally to make matched letters more readable while searching.
 
-`.bold {
-    font-weight: bold;
-}`
+    `.bold { font-weight: bold; }`
 
-Input
+### Input
 
-*[items] - Any search item list.
+| Name | Type | Description | | 
+| ------ | ------ |------ |-----|
+| items | any[] | Search item list|required|
+| options | { key : string, display : string } | 'key' is the property name which will be used to filter item set while 'display' will be the property which will appear in search results|required|
+| control | FormControl | Angular form control |required|
+| elementId | string | HTML element id (if you need mutiple nova-search instances in the same page) |optional|
+| placeholder | string | Input placeholder|optional|
+| inputCss | string | Css class names for search box element Ex: `[inputCss]="'class-1 class-2'"`|optional|
+| optionCss | string | Css class names for search results section Ex: `[optionCss]="'class-1 class-2'"` |optional|
+| skipAccents | boolean | A boolean property which is to toggle whether user wants to skip accents while searching or not. (default value is set to false) |optional|
 
-*[options] - This needs a object with type `{ key : string, display : string }`. 
-             1). 'key' is the property name which will be used to filter item set.
-             2). 'display' will be the property which will appear in search results.
+### Output
 
-*[control] - angular form control
-
-[elementId] - HTML element id
-
-[placeholder] - Input placeholder
-
-[inputCss] - Css class names for search box element. Ex: ` [inputCss]="'custom-css-1 custom-css-2'"`
-
-[optionCss] - Css class names for search results section. Ex: ` [optionCss]="'custom-css-1 custom-css-2'"`
-
-[skipAccents] - This will be a boolean property which is to toggle whether user wants to skip accents while searching or not.
-
-Output
-
-(onItemSelected): Event - change event when user clicks on a search result. 
+| Name | Type | Description |
+| ------ | ------ |------ |
+|( onItemSelected ) | any | Change event when user clicks on a search result |
 
