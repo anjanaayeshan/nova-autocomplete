@@ -24,13 +24,17 @@ export class AppComponent {
     this.initForm();
   }
 
-  initForm(): FormGroup {
-    return this.stateForm = this.fb.group({
-      search: [null]
+  initForm() {
+    this.stateForm = this.fb.group({
+      search: []
     });
   }
 
   onItemSelected(value: any) {
     console.log(value);
+  }
+
+  onClearText() {
+    console.log('cleared');
   }
 }

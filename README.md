@@ -9,6 +9,8 @@ Search box for angular 6+ applications which can filter any item set with or wit
  - Angular v6 and above supported 
  - Cross browser support
 
+ - Check it out [demo](https://stackblitz.com/edit/angular-1tkqwa) 
+
 # Installation
     Run `npm install nova-search`
 
@@ -47,4 +49,5 @@ Search box for angular 6+ applications which can filter any item set with or wit
 | Name | Type | Description |
 | ------ | ------ |------ |
 |( onItemSelected ) | any | Change event when user clicks on a search result |
+|( onClearText ) | void | Change event when user clears input text |
 

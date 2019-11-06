@@ -22,6 +22,8 @@ export class NovaSearchComponent implements OnInit {
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onItemSelected: EventEmitter<any> = new EventEmitter();
+  // tslint:disable-next-line: no-output-on-prefix
+  @Output() onClearText: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
@@ -40,6 +42,10 @@ export class NovaSearchComponent implements OnInit {
     this.control.patchValue(value[this.options.display]);
     this.onItemSelected.emit(value);
     this.onCloseDropDown();
+  }
+
+  onChangeText(text: string) {
+    if (!text) { this.onClearText.emit(); }
   }
 
   onCloseDropDown() {
