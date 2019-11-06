@@ -23,8 +23,9 @@ Search box for angular 6+ applications which can filter any item set with or wit
     `@NgModule({ imports: [ ..., NovaSearchModule ], ... })`
 
 - Use nova-search component inside your HTML and pass values for inputs. Example:
-    `<nova-search [items]="itemList" [options]="{ key:'value', display:'value' }" 
-    [skipAccents]="false" [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'" 
+
+    `<nova-search [items]="itemList" [options]="{ key:'value', display:'value' }" [disabled]="false"
+    [skipAccents]="false" [inputCss]="'custom-css-1'" [optionCss]="'custom-css-2'"
     [control]="formGroup.controls.search" [elementId]="'nova-search-element'" [placeholder]="'search here'" (onItemSelected)="onItemSelected($event)"></nova-search>`
 
 - Add a css class named 'bold' globally to make matched letters more readable while searching.
