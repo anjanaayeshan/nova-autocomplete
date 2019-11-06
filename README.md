@@ -38,6 +38,7 @@ Search box for angular 6+ applications which can filter any item set with or wit
 | items | any[] | Search item list|required|
 | options | { key : string, display : string } | 'key' is the property name which will be used to filter item set while 'display' will be the property which will appear in search results|required|
 | control | FormControl | Angular form control |required|
+| disabled | boolean | Disable/Enable input |optional|
 | elementId | string | HTML element id (if you need mutiple nova-search instances in the same page) |optional|
 | placeholder | string | Input placeholder|optional|
 | inputCss | string | Css class names for search box element Ex: `[inputCss]="'class-1 class-2'"`|optional|

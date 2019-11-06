@@ -17,6 +17,7 @@ export class NovaSearchComponent implements OnInit {
   @Input() elementId: string;
   @Input() placeholder: string;
   @Input() skipAccents: boolean;
+  @Input() disabled: boolean;
 
   showDropDown = false;
 
@@ -45,7 +46,7 @@ export class NovaSearchComponent implements OnInit {
   }
 
   onChangeText(text: string) {
-    if (!text) { this.onClearText.emit(); }
+    if (!text && !this.disabled) { this.onClearText.emit(); }
   }
 
   onCloseDropDown() {

@@ -21,3 +21,8 @@
 .bold {
     font-weight: bold !important;
 }
+
+.disabled {
+    cursor: not-allowed;
+    background: lightgray;
+}
