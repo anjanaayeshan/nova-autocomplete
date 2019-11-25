@@ -19,7 +19,7 @@ export class AppComponent {
     { id: 5, value: 'Miguel Ángel Paya Vera' },
     { id: 6, value: 'Rebecca Sen' }
   ];
-  // inputCss1 = 'sads asdasd';
+
   constructor(private fb: FormBuilder) {
     this.initForm();
   }
