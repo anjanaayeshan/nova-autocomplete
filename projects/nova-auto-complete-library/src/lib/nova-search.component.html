@@ -1,5 +1,5 @@
 <input id='{{ elementId }}' autocomplete="off" placeholder="{{ placeholder }}" [formControl]="control"
-    [ngClass]="['inputCss', disabled ? 'disabled': '']" type='text' (keyup)="onChangeText($event.target.value)"
+    [ngClass]="[inputCss , disabled ? 'disabled': '']" type='text' (keyup)="onChangeText($event.target.value)"
     [readonly]="disabled">
 
 <div novaSearch (clickOutSide)="onCloseDropDown()">
