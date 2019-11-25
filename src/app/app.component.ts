@@ -37,4 +37,6 @@ export class AppComponent {
   onClearText() {
     console.log('cleared');
   }
+
+  onClick() { this.showDropDown = false; }
 }

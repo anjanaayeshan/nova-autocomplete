@@ -18,8 +18,7 @@ export class NovaSearchComponent implements OnInit {
   @Input() placeholder: string;
   @Input() skipAccents: boolean;
   @Input() disabled: boolean;
-
-  showDropDown = false;
+  @Input() showDropDown: boolean;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onItemSelected: EventEmitter<any> = new EventEmitter();
@@ -49,11 +48,8 @@ export class NovaSearchComponent implements OnInit {
     if (!text && !this.disabled) { this.onClearText.emit(); }
   }
 
-  onCloseDropDown() {
-    this.showDropDown = false;
-  }
+  onCloseDropDown() { this.showDropDown = false; }
 
-  onOpenDropDown() {
-    this.showDropDown = true;
-  }
+  onOpenDropDown() { this.showDropDown = true; }
+
 }
