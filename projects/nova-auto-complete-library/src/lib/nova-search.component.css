@@ -1,28 +1,33 @@
 .drop-down {
-    position: absolute;
-    max-height: 300px;
-    overflow-y: auto;
-    z-index: 10;
-    background-color: #F6F6F6;
-    font-family: sans-serif;
-    opacity: 0.98;
-    cursor: pointer;
+  position: absolute;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 10;
+  background-color: #F6F6F6;
+  font-family: sans-serif;
+  opacity: 0.98;
+  cursor: pointer;
 }
 
 .search-results {
-    padding: 10px;
+  padding: 10px;
 }
 
-.search-results:hover {
+  .search-results:hover {
     background: #707070;
     color: #fff;
-}
+  }
+
+  .search-results.search-results-select {
+    background: #707070 !important;
+    color: #fff;
+  }
 
 .bold {
-    font-weight: bold !important;
+  font-weight: bold !important;
 }
 
 .disabled {
-    cursor: not-allowed;
-    background: lightgray;
+  cursor: not-allowed;
+  background: lightgray;
 }

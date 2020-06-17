@@ -1,6 +1,7 @@
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { NovaSearchService } from './nova-search.service';
 
 @Component({
   selector: 'nova-search',
@@ -25,7 +26,10 @@ export class NovaSearchComponent implements OnInit {
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onClearText: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  selected = -1;
+  currentIndex = -1;
+
+  constructor(private novaSearchService: NovaSearchService) { }
 
   ngOnInit() {
     if (!this.elementId) { this.elementId = 'nova-auto-complete'; }
@@ -45,11 +49,32 @@ export class NovaSearchComponent implements OnInit {
   }
 
   onChangeText(text: string) {
-    if (!text && !this.disabled) { this.onClearText.emit(); }
+    if (!text && !this.disabled) {
+      this.novaSearchService.currentItemList = this.items;
+      this.onClearText.emit();
+    }
   }
 
-  onCloseDropDown() { this.showDropDown = false; }
+  onCloseDropDown() { this.selected = -1; this.currentIndex = -1; this.showDropDown = false; }
 
-  onOpenDropDown() { this.showDropDown = true; }
+  onOpenDropDown() { this.selected = -1; this.currentIndex = -1; this.showDropDown = true; }
 
+  onUp() { if (this.currentIndex != 0) { this.selected = this.currentIndex = this.currentIndex - 1; } }
+
+  onDown() {
+    if ((this.novaSearchService.currentItemList.length - 1) != this.currentIndex) {
+      this.selected = this.currentIndex = this.currentIndex + 1;
+    }
+  }
+
+  onEnter() {    
+    if (this.novaSearchService.currentItemList.length > 0 && this.currentIndex > -1) {
+      let selectItem = this.novaSearchService.currentItemList[this.currentIndex];
+      if (selectItem) {
+        this.control.patchValue(selectItem[this.options.display]);
+        this.onItemSelected.emit(selectItem);
+      }
+    }
+    this.onCloseDropDown();
+  }
 }
