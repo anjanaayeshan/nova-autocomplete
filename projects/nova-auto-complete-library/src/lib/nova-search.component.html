@@ -1,14 +1,15 @@
 <input id='{{ elementId }}' autocomplete="off" placeholder="{{ placeholder }}" [formControl]="control"
     [ngClass]="[inputCss ? inputCss : '' , disabled ? 'disabled': '']" type='text'
-    (keyup)="onChangeText($event.target.value)" (keydown.ArrowUp)="onUp()" (keydown.ArrowDown)="onDown()" (keydown.Enter)="onEnter()"
-       [readonly]="disabled">
+    (keyup)="onChangeText($event.target.value)" (keydown.ArrowUp)="onUp()" (keydown.ArrowDown)="onDown()"
+    (keydown.Enter)="onEnter()" [readonly]="disabled">
 
 <div novaSearch (clickOutSide)="onCloseDropDown()">
     <div *ngIf='showDropDown' class='drop-down' #novaSearch>
 
         <ng-container *ngFor="let item of items | filter: control.value: options.key : skipAccents; let i = index">
-         
-            <div (click)="onSelectValue(item)" class="search-results" [ngClass]="[selected === i ? 'search-results-select' : '']">
+
+            <div (click)="onSelectValue(item)" class="search-results"
+                [ngClass]="[selected === i ? 'search-results-select' : '', optionCss]">
                 <a [innerHTML]="item[options.key] | bold: control.value">
                     {{ item[options.display] }}
                 </a>

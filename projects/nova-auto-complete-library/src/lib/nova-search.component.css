@@ -14,12 +14,12 @@
 }
 
   .search-results:hover {
-    background: #707070;
+    background: #07a3e1;
     color: #fff;
   }
 
   .search-results.search-results-select {
-    background: #707070 !important;
+    background: #07a3e1;
     color: #fff;
   }
 
