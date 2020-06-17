@@ -84,7 +84,12 @@ export class NovaSearchComponent implements OnInit {
   }
 
   onScroll() {
-    var selectElements = this.novaSearchElement.nativeElement.getElementsByClassName('search-results-select');
-    if (selectElements.length == 1) { selectElements[0].scrollIntoView(false); }
+    if (this.novaSearchElement) {
+      const selectElements = this.novaSearchElement.nativeElement
+        .getElementsByClassName('search-results-select');
+      if (selectElements.length === 1) {
+        selectElements[0].scrollIntoView(false);
+      }
+    }
   }
 }
