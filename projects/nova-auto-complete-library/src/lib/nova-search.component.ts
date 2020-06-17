@@ -64,17 +64,17 @@ export class NovaSearchComponent implements OnInit {
 
   onOpenDropDown() { this.selected = -1; this.currentIndex = -1; this.showDropDown = true; }
 
-  onUp() { if (this.currentIndex != 0) { this.selected = this.currentIndex = this.currentIndex - 1; } }
+  onUp() { if (this.currentIndex !== 0) { this.selected = this.currentIndex = this.currentIndex - 1; } }
 
   onDown() {
-    if ((this.novaSearchService.currentItemList.length - 1) != this.currentIndex) {
+    if ((this.novaSearchService.currentItemList.length - 1) !== this.currentIndex) {
       this.selected = this.currentIndex = this.currentIndex + 1;
     }
   }
 
   onEnter() {
     if (this.novaSearchService.currentItemList.length > 0 && this.currentIndex > -1) {
-      let selectItem = this.novaSearchService.currentItemList[this.currentIndex];
+      const selectItem = this.novaSearchService.currentItemList[this.currentIndex];
       if (selectItem) {
         this.control.patchValue(selectItem[this.options.display]);
         this.onItemSelected.emit(selectItem);
