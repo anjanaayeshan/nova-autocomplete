@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NovaSearchService } from './nova-search.service';
 
@@ -8,7 +8,7 @@ import { NovaSearchService } from './nova-search.service';
   templateUrl: './nova-search.component.html',
   styleUrls: ['./nova-search.component.css']
 })
-export class NovaSearchComponent implements OnInit {
+export class NovaSearchComponent implements OnInit, AfterViewChecked {
 
   @Input() options: { key: string, display: string };
   @Input() control: FormControl;
