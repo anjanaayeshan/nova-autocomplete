@@ -1,5 +1,5 @@
 
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NovaSearchService } from './nova-search.service';
 
@@ -28,6 +28,7 @@ export class NovaSearchComponent implements OnInit {
 
   selected = -1;
   currentIndex = -1;
+  @ViewChild('novaSearch') private novaSearchElement: ElementRef;
 
   constructor(private novaSearchService: NovaSearchService) { }
 
@@ -40,6 +41,10 @@ export class NovaSearchComponent implements OnInit {
         }
       });
     }
+  }
+
+  ngAfterViewChecked() {
+    this.onScroll();
   }
 
   onSelectValue(value: any) {
@@ -67,7 +72,7 @@ export class NovaSearchComponent implements OnInit {
     }
   }
 
-  onEnter() {    
+  onEnter() {
     if (this.novaSearchService.currentItemList.length > 0 && this.currentIndex > -1) {
       let selectItem = this.novaSearchService.currentItemList[this.currentIndex];
       if (selectItem) {
@@ -76,5 +81,10 @@ export class NovaSearchComponent implements OnInit {
       }
     }
     this.onCloseDropDown();
+  }
+
+  onScroll() {
+    var selectElements = this.novaSearchElement.nativeElement.getElementsByClassName('search-results-select');
+    if (selectElements.length == 1) { selectElements[0].scrollIntoView(false); }
   }
 }

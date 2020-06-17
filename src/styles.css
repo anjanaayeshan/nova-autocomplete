@@ -1,3 +1,8 @@
 .bold {
     font-weight: bold;
 }
+
+.drop-down {
+  max-height: 200px !important;
+  overflow-y: auto;
+}

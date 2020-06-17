@@ -4,7 +4,7 @@
        [readonly]="disabled">
 
 <div novaSearch (clickOutSide)="onCloseDropDown()">
-    <div *ngIf='showDropDown' class='drop-down'>
+    <div *ngIf='showDropDown' class='drop-down' #novaSearch>
 
         <ng-container *ngFor="let item of items | filter: control.value: options.key : skipAccents; let i = index">
          
