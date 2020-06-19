@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -19,6 +19,7 @@ export class AppComponent {
     { id: 5, value: 'Miguel Ángel Paya Vera' },
     { id: 6, value: 'Rebecca Sen' }
   ];
+  @ViewChild('novaSearch') novaSearch: any;
 
   constructor(private fb: FormBuilder) {
     this.initForm();
@@ -38,5 +39,9 @@ export class AppComponent {
     console.log('cleared');
   }
 
-  onClick() { this.showDropDown = false; }
+  onClick() {
+    if (this.novaSearch) {
+      this.novaSearch.focus();
+    }
+  }
 }

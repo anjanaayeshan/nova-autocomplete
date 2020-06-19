@@ -43,6 +43,11 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  focus() {
+    const input = document.getElementById(this.elementId);
+    if (input) { input.focus(); }
+  }
+
   ngAfterViewChecked() {
     this.onScroll();
   }
