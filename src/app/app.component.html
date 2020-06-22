@@ -4,7 +4,7 @@
   </label>
 
   <form [formGroup]='stateForm' autocomplete="new-password" novalidate>
-    <nova-search [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="false" #novaSearch
+    <nova-search [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="false"
       [showDropDown]="showDropDown" [elementId]="'nova-search-element'" [inputCss]="'custom-css-1 test1 test2 test3'"
       [optionCss]="'custom-css-2'" [disabled]="false" (onClearText)="onClearText()"
       [control]="stateForm.controls.search" (onItemSelected)="onItemSelected($event)">
@@ -24,6 +24,14 @@
   <br />
   <br />
   <br />
+
+  <nova-search [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="false"
+    [showDropDown]="showDropDown" [elementId]="'nova-search-element-2'" [inputCss]="'custom-css-1 test1 test2 test3'"
+    [optionCss]="'custom-css-2'" [disabled]="false" (onClearText)="onClearText()" [control]="stateForm.controls.search"
+    (onItemSelected)="onItemSelected($event)">
+  </nova-search>
+
+
   <button type="button" (click)="onClick()">focus</button>
 
 </div>

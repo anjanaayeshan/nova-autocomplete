@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { NovaSearchService } from '../../projects/nova-auto-complete-library/src/lib/nova-search.service';
 
 @Component({
   selector: 'app-root',
@@ -19,9 +20,8 @@ export class AppComponent {
     { id: 5, value: 'Miguel Ángel Paya Vera' },
     { id: 6, value: 'Rebecca Sen' }
   ];
-  @ViewChild('novaSearch') novaSearch: any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private service: NovaSearchService) {
     this.initForm();
   }
 
@@ -40,8 +40,6 @@ export class AppComponent {
   }
 
   onClick() {
-    if (this.novaSearch) {
-      this.novaSearch.focus();
-    }
+    this.service.focus('nova-search-element-2');
   }
 }
