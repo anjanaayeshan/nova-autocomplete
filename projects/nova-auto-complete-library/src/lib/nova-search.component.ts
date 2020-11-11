@@ -20,6 +20,7 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
   @Input() skipAccents: boolean;
   @Input() disabled: boolean;
   @Input() showDropDown: boolean;
+  @Input() allowQuoteSearch: boolean;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onItemSelected: EventEmitter<any> = new EventEmitter();
@@ -57,6 +58,10 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
     if (!text && !this.disabled) {
       this.novaSearchService.currentItemList = this.items;
       this.onClearText.emit();
+    } else {
+      if (this.novaSearchService.currentItemList.length === 1) {
+        this.selected = this.currentIndex = 0;
+      }
     }
   }
 
