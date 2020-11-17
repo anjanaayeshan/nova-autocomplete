@@ -1,12 +1,12 @@
 # Nova Search
 
-Search box for angular 6+ applications which can filter any item set with or without any accent in different languages like Spanish, French etc.
+Search box for angular 2+ applications which can filter any item set with or without any accent in different languages like Spanish, French etc.
 
 # Features
  - Search dropdown list 
  - Consider language accents while searching 
  - Angular forms support 
- - Angular v6 and above supported 
+ - Angular 2 and above supported 
  - Cross browser support
 
  - Check it out [demo](https://stackblitz.com/edit/angular-1tkqwa) 
@@ -53,3 +53,12 @@ Search box for angular 6+ applications which can filter any item set with or wit
 |( onItemSelected ) | any | Change event when user clicks on a search result |
 |( onClearText ) | void | Change event when user clears input text |
 
+### Services & Methods
+
+- Use `NovaSearchService` service and call `focus(elementId :string)` method.
+
+- Example: :
+
+    `constructor(private service: NovaSearchService){ }`
+
+    `this.service.focus('element-id');`

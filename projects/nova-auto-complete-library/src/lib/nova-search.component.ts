@@ -30,6 +30,7 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
   selected = -1;
   currentIndex = -1;
   @ViewChild('novaSearch') private novaSearchElement: ElementRef;
+  ignoredKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
 
   constructor(private novaSearchService: NovaSearchService) { }
 
@@ -54,13 +55,16 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
     this.onCloseDropDown();
   }
 
-  onChangeText(text: string) {
-    if (!text && !this.disabled) {
-      this.novaSearchService.currentItemList = this.items;
-      this.onClearText.emit();
-    } else {
-      if (this.novaSearchService.currentItemList.length === 1) {
-        this.selected = this.currentIndex = 0;
+  onChangeText(key: string, text: string) {
+    const notIncluded = !this.ignoredKeys.includes(key);
+    if (notIncluded) {
+      if (!text && !this.disabled) {
+        this.novaSearchService.currentItemList = this.items;
+        this.onClearText.emit();
+      } else {
+        if (this.novaSearchService.currentItemList.length === 1) {
+          this.selected = this.currentIndex = 0;
+        }
       }
     }
   }
