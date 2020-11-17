@@ -56,8 +56,8 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
   }
 
   onChangeText(key: string, text: string) {
-    const notIncluded = !this.ignoredKeys.includes(key);
-    if (notIncluded) {
+    const included = this.ignoredKeys.indexOf(key) > -1;
+    if (!included) {
       if (!text && !this.disabled) {
         this.novaSearchService.currentItemList = this.items;
         this.onClearText.emit();
