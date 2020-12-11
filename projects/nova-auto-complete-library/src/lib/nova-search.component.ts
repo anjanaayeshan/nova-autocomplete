@@ -21,6 +21,7 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
   @Input() disabled: boolean;
   @Input() showDropDown: boolean;
   @Input() allowQuoteSearch: boolean;
+  @Input() skipCharactersCount: number;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output() onItemSelected: EventEmitter<any> = new EventEmitter();

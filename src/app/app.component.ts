@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { NovaSearchService } from '../../projects/nova-auto-complete-library/src/lib/nova-search.service';
-// import { NovaSearchService } from 'dist/nova-search';
+// import { NovaSearchService } from '../../projects/nova-auto-complete-library/src/lib/nova-search.service';
+import { NovaSearchService } from 'dist/nova-search';
 
 @Component({
   selector: 'app-root',

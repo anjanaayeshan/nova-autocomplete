@@ -13,23 +13,13 @@
   <br />
   <br />
   <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <h4>Skip accents : true </h4>
   <br />
   <nova-search [items]="states" [options]="{ key:'value', display:'value' }" [skipAccents]="true"
     [allowQuoteSearch]="true" [showDropDown]="showDropDown" [elementId]="'nova-search-element-2'"
     [inputCss]="'custom-css-1 test1 test2 test3'" [optionCss]="'custom-css-2'" [disabled]="false"
-    (onClearText)="onClearText()" [control]="stateForm.controls.search" (onItemSelected)="onItemSelected($event)">
+    (onClearText)="onClearText()" [control]="stateForm.controls.search" [skipCharactersCount]="1"
+    (onItemSelected)="onItemSelected($event)">
   </nova-search>
 
 

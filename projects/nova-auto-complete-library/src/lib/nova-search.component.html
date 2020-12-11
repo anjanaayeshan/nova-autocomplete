@@ -6,8 +6,9 @@
 <div novaSearch (clickOutSide)="onCloseDropDown()">
     <div *ngIf='showDropDown' class='drop-down' #novaSearch>
 
-        <ng-container
-            *ngFor="let item of items | filter: control.value: options.key : skipAccents : allowQuoteSearch; let i = index">
+        <ng-container *ngFor="let item of items | 
+            filter: control.value: options.key : 
+            skipAccents : allowQuoteSearch : skipCharactersCount; let i = index">
 
             <div (click)="onSelectValue(item)" class="search-results"
                 [ngClass]="[selected === i ? 'search-results-select' : '', optionCss]">
