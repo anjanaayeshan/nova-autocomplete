@@ -13,7 +13,7 @@ export class AppComponent {
   stateForm: FormGroup;
   showDropDown = false;
 
-  states = [
+  list = [
     { id: 1, value: 'Anna Patiño Tarín' },
     { id: 2, value: 'Victoria Camila' },
     { id: 3, value: 'Mercedes Vélez Alcántara' },
@@ -37,7 +37,7 @@ export class AppComponent {
   }
 
   onClearText() {
-    console.log('cleared');
+    // console.log('cleared');
   }
 
   onClick() {

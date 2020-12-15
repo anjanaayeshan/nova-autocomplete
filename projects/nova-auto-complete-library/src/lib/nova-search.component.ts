@@ -38,8 +38,8 @@ export class NovaSearchComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
     if (!this.elementId) { this.elementId = 'nova-auto-complete'; }
     if (this.control) {
-      this.control.valueChanges.subscribe(changedValue => {
-        if (changedValue) {
+      this.control.valueChanges.subscribe((changedValue: string) => {
+        if (changedValue && changedValue.length >= (this.skipCharactersCount ? this.skipCharactersCount : 0)) {
           this.onOpenDropDown();
         }
       });

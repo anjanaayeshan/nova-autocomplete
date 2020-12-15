@@ -11,7 +11,7 @@ export class FilterPipe implements PipeTransform {
   transform(
     items: any[], search: string, labelKey = 'label',
     skipAccents = false, allowQuoteSearch = false, skipCharactersCount = 0): any {
-    if (!search) { return items; }
+    if (!search) { return []; }
     let list = [];
     if (allowQuoteSearch && this.validateForQuoteSearch(search)) {
       const sk = search.substring(1, search.length - 1);
